@@ -55,6 +55,13 @@
 			<scope>provided</scope>
 		</dependency>
 
+        <dependency>
+            <groupId>io.openliberty.features</groupId>
+            <artifactId>cdi-2.0</artifactId>
+            <type>esa</type>
+            <scope>provided</scope>
+        </dependency>
+
 		<!-- For JDK 11 Support -->
 		<dependency>
 			<groupId>javax.xml.bind</groupId>

@@ -5,17 +5,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
+
 import fr.devoxx.microprofile.model.Stone;
 
+@ApplicationScoped
 public class StoneService {
 
-	static Map<Integer, Stone> stones = new HashMap<>();
-
-	private static StoneService INSTANCE = new StoneService();
+	private Map<Integer, Stone> stones = new HashMap<>();
 	
-	
-	private StoneService() {
-		super();
+	@PostConstruct
+	public void init() {
 		stones.put(1, new Stone(1, "Time", "Green"));
 		stones.put(2, new Stone(2, "Power", "Purple"));
 		stones.put(3, new Stone(3, "Space", "Blue"));
@@ -24,11 +25,8 @@ public class StoneService {
 		stones.put(6, new Stone(6, "Mind", "Yellow"));
 	}
 
-	public static StoneService getStoneService() {
-		return INSTANCE;
-	}
 	public Stone findById(Integer id) {
-		return stones.get(id);
+		return  stones.get(id);
 	}
 
 	public List<Stone> findAll(){
