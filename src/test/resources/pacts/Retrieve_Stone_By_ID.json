@@ -1,0 +1,37 @@
+{
+    "provider": {
+        "name": "Stone"
+    },
+    "consumer": {
+        "name": "Mission"
+    },
+    "interactions": [
+        {
+            "providerState": "Consumer is Mission",
+            "description": "A request to find Soul Stone",
+            "request": {
+                "method": "GET",
+                "path": "/InfinityWar/stones/3"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                   "Content-Type" : "application/json"
+                 },
+                "body": {
+                  "id":3, 
+                  "name":"Space",
+                  "color":"Blue"
+                }
+            }
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.2.0"
+        }
+    }
+}
