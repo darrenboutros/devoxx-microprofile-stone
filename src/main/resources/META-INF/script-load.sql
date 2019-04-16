@@ -1,4 +1,3 @@
-
 INSERT INTO stone (id, name, color) VALUES (1, 'Time' , 'Green')
 INSERT INTO stone (id, name, color) VALUES (2, 'Power', 'Purple')
 INSERT INTO stone (id, name, color) VALUES (3, 'Space', 'Blue')
