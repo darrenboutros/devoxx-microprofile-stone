@@ -1,5 +1,6 @@
 package fr.devoxx.microprofile.dao;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.enterprise.context.RequestScoped;
@@ -24,5 +25,14 @@ public class StoneDao {
     	return Optional.ofNullable(em.find(StoneEntity.class, id));
     }
     
+    public List<StoneEntity> findAll(){
+    	return em.createNamedQuery("Stone.findAll", StoneEntity.class).getResultList();
+    }
+    
+    public List<StoneEntity> findStoneByName(String name){
+    	return em.createNamedQuery("Stone.findByName", StoneEntity.class)
+    			.setParameter("name", name)
+    			.getResultList();
+    }
 
 }

@@ -12,10 +12,12 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table (name = "Stone")
-@NamedQuery(name = "StoneEntity.findAll", query = "SELECT s FROM StoneEntity s")
+@NamedQuery(name = "Stone.findAll", query = "SELECT s FROM StoneEntity s")
+@NamedQuery(name = "Stone.findByName", query = "SELECT s FROM StoneEntity s WHERE " + 
+		"s.name = :name")
 @Data @AllArgsConstructor @NoArgsConstructor
 public class StoneEntity {
-	
+
 	@Id
 	@GeneratedValue
 	private Integer id;
